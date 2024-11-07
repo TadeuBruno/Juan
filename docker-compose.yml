@@ -5,12 +5,14 @@ services:
     build:
       context: .
       dockerfile: py.dockerfile
+    restart: always
     ports:
       - "8000:8000"
   java-api:
     build:
       context: .
       dockerfile: java.dockerfile
+    restart: always
     ports:
       - "8080:8080"
   
