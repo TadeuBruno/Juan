@@ -6,6 +6,7 @@ RUN apt-get update
 RUN apt install git -y
 RUN git clone https://github.com/lab-invest/back-end.git
 RUN cd back-end
+RUN git pull
 RUN git checkout ENTREGA-FINAL
 RUN pip install --no-cache-dir -r requirements.txt
 
