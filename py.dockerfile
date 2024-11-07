@@ -30,7 +30,8 @@ RUN apt-get update && apt-get install -y \
 # Clona o repositório e muda para o branch ENTREGA-FINAL
 RUN git clone https://github.com/lab-invest/back-end.git \
     && cd back-end \
-    && git checkout ENTREGA-FINAL
+    && git checkout ENTREGA-FINAL \
+    && git pull origin ENTREGA-FINAL
 
 # Define o diretório de trabalho para o backend e instala dependências do Python
 WORKDIR /app/back-end
