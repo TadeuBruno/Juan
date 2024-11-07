@@ -17,7 +17,8 @@ RUN git clone https://github.com/lab-invest/back-end.git /app/back-end \
 
 # Instala as dependências do Python
 WORKDIR /app/back-end
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt \
+    && rm -rf /root/.cache  # Remove o cache do pip para economizar espaço
 
 # Expõe a porta e define o comando para iniciar o servidor
 EXPOSE 8000
