@@ -1,5 +1,5 @@
 # Usa uma imagem do JDK 17 para compilar e executar a aplicação
-FROM openjdk:17-jdk-slim as build
+FROM openjdk:21-jdk-slim as build
 
 # Define o diretório de trabalho dentro do container
 WORKDIR /app
@@ -12,7 +12,7 @@ RUN git clone https://github.com/lab-invest/back-end-java.git . && git checkout 
 RUN mvn clean package -DskipTests
 
 # Cria uma nova imagem para execução
-FROM openjdk:17-jdk-slim
+FROM openjdk:21-jdk-slim
 
 # Define o diretório de trabalho e copia o JAR da fase de build
 WORKDIR /app
