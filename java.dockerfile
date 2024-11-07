@@ -5,11 +5,11 @@ FROM openjdk:17-jdk-slim as build
 WORKDIR /app
 
 # Instala o Git e clona o repositório específico
-RUN apt-get update && apt-get install -y git
+RUN apt-get update && apt-get install -y git mvn
 RUN git clone https://github.com/lab-invest/back-end-java.git . && git checkout ENTREGA-FINAL
 
 # Compila a aplicação Spring Boot com Maven
-RUN ./mvnw clean package -DskipTests
+RUN mvn clean package -DskipTests
 
 # Cria uma nova imagem para execução
 FROM openjdk:17-jdk-slim
