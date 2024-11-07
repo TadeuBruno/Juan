@@ -2,7 +2,7 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-RUN apt get install git
+RUN apt install git
 RUN git clone https://github.com/lab-invest/back-end.git
 RUN cd back-end
 RUN git checkout ENTREGA-FINAL
