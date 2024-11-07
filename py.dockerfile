@@ -15,11 +15,8 @@ RUN git clone https://github.com/lab-invest/back-end.git /app/back-end \
     && git checkout ENTREGA-FINAL \
     && git pull origin ENTREGA-FINAL
 
-# Copia apenas o arquivo requirements.txt para aproveitar o cache de dependências
-WORKDIR /app/back-end
-COPY back-end/requirements.txt /app/back-end/requirements.txt
-
 # Instala as dependências do Python
+WORKDIR /app/back-end
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expõe a porta e define o comando para iniciar o servidor
