@@ -7,5 +7,13 @@ services:
       dockerfile: py.dockerfile
     ports:
       - "8000:8000"
+  java-api:
+    build:
+      context: .
+      dockerfile: java.dockerfile
+    ports:
+      - "8080:8080"
+  
+
   
 
